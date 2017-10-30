@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blogen Admin Area</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="src/css/font-awesome-269550530c.min.css"/>
+    
+    <link rel="stylesheet" href="src/css/font-awesome-5b64c741c2.min.css"/>
+    
+    <link rel="stylesheet" href="src/css/font-awesome-d41d8cd98f.min.css"/>
 </head>
 
 <body>
@@ -61,7 +63,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h1>
-                        <i class="fa fa-gear"></i> Settings</h1>
+                        <i class="fs fs-user"></i> Edit Profile</h1>
                 </div>
             </div>
         </div>
@@ -76,8 +78,8 @@
                         <i class="fa fa-arrow-left"></i> Back To Dashboard</a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#" class="btn btn-success btn-block">
-                        <i class="fa fa-check"></i> Save Changes</a>
+                    <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#passwordModal">
+                        <i class="fa fa-lock"></i> Change Password</a>
                 </div>
                 <div class="col-md-3">
                     <a href="#" class="btn btn-danger btn-block">
@@ -87,47 +89,38 @@
         </div>
     </section>
 
-    <!-- SETTINGS -->
-    <section id="settings">
+    <!-- PROFILE EDIT -->
+    <section id="profile">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-md-9">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Settings</h4>
+                            <h4>Edit Profile</h4>
                         </div>
                         <div class="card-body">
                             <form>
-                                <fieldset class="form-group">
-                                    <legend>Allow User Registration</legend>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" value="yes" checked> Yes
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" value="no"> No
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="form-group">
-                                    <legend>Homepage Format</legend>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" value="posts" checked> Post Index
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" value="page"> Single Page
-                                        </label>
-                                    </div>
-                                </fieldset>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" value="Brad Traversy">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" value="Brad Traversy">
+                                </div>
+                                <div class="form-group">
+                                    <label for="title">Bio</label>
+                                    <textarea name="editor1" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate expedita id nisi, ratione atque inventore totam illum necessitatibus eos molestias amet obcaecati veritatis ipsum quisquam similique provident dicta esse asperiores?</textarea>
+                                </div>
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-3">
+                    <h3>Your Avatar</h3>
+                    <img src="img/avatar.png" alt="" class="img-fluid d-block mb-3">
+                    <button class="btn btn-primary btn-block">Edit Image</button>
+                    <button class="btn btn-danger btn-block">Delete Image</button>
                 </div>
             </div>
         </div>
@@ -143,6 +136,35 @@
         </div>
     </footer>
 
+    <!-- PASSWORD MODAL -->
+    <div class="modal fade" id="passwordModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Change Password</h5>
+                    <button class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Confirm Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Update Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
